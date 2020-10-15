@@ -52,7 +52,7 @@ ORDER BY
 
 /* --------- Join ---------- */
 
-6)Come si chiamano gli ospiti che hanno fatto più di due prenotazioni?
+6) Come si chiamano gli ospiti che hanno fatto più di due prenotazioni?
 SELECT
     COUNT(
         prenotazioni_has_ospiti.ospite_id
@@ -70,7 +70,7 @@ HAVING
     ) > 2;
 
 
-Stampare tutti gli ospiti per ogni prenotazione
+7) Stampare tutti gli ospiti per ogni prenotazione
 SELECT
     ospiti.name Nome,
     ospiti.lastname Cognome,
@@ -79,11 +79,12 @@ FROM
     ospiti
 INNER JOIN prenotazioni_has_ospiti ON ospiti.id = prenotazioni_has_ospiti.ospite_id
 
-Stampare Nome, Cognome, Prezzo e Pagante per tutte le prenotazioni fatte a Maggio 2018
+
+8) Stampare Nome, Cognome, Prezzo e Pagante per tutte le prenotazioni fatte a Maggio 2018
 
 
-Fai la somma di tutti i prezzi delle prenotazioni per le stanze del primo piano
+9) Fai la somma di tutti i prezzi delle prenotazioni per le stanze del primo piano
 
-Prendi i dati di fatturazione per la prenotazione con id=7
+10) Prendi i dati di fatturazione per la prenotazione con id=7
 
-Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze non ancora prenotate)
+11) Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze non ancora prenotate)
