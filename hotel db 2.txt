@@ -52,12 +52,32 @@ ORDER BY
 
 /* --------- Join ---------- */
 
-Come si chiamano gli ospiti che hanno fatto più di due prenotazioni?
-
+6)Come si chiamano gli ospiti che hanno fatto più di due prenotazioni?
+SELECT
+    COUNT(
+        prenotazioni_has_ospiti.ospite_id
+    ) AS 'tot_pren',
+    ospiti.name 'Nome',
+    ospiti.lastname 'Cognome'
+FROM
+    `ospiti`
+INNER JOIN `prenotazioni_has_ospiti` ON ospiti.id = prenotazioni_has_ospiti.ospite_id
+GROUP BY
+    ospiti.name
+HAVING
+    COUNT(
+        prenotazioni_has_ospiti.ospite_id
+    ) > 2;
 
 
 Stampare tutti gli ospiti per ogni prenotazione
-
+SELECT
+    ospiti.name Nome,
+    ospiti.lastname Cognome,
+    prenotazioni_has_ospiti.prenotazione_id n_prenotazione
+FROM
+    ospiti
+INNER JOIN prenotazioni_has_ospiti ON ospiti.id = prenotazioni_has_ospiti.ospite_id
 
 Stampare Nome, Cognome, Prezzo e Pagante per tutte le prenotazioni fatte a Maggio 2018
 
